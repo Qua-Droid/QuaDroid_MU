@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.patrick.car.mycustomui"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+    <uses-permission android:name="android.permission.ACTIVITY_EMBEDDING" />
+    <uses-permission android:name="android.permission.MANAGE_ACTIVITY_TASKS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MyPassengerUserPicker"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".UserSwitchReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_SWITCHED" />
+                <action android:name="android.intent.action.USER_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,12 @@
+android_app {
+    name: "MyCustomUI",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
+    platform_apis: true,
+    system_ext_specific: true, 
+    libs: ["framework"],
+    installable: true,
+    privileged: true,
+    certificate: "platform",
+}
